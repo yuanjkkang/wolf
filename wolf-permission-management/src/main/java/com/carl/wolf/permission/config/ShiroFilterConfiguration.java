@@ -44,6 +44,10 @@ public class ShiroFilterConfiguration extends AbstractShiroWebFilterConfiguratio
         return filterFactoryBean;
     }
 
+    /**
+     * 如果没有这段配置，controller中加入@requirePermisson的方法不会被扫描到
+     * @return
+     */
     @Bean
     @DependsOn("lifecycleBeanPostProcessor")
     public DefaultAdvisorAutoProxyCreator getAutoProxyCreator(){
